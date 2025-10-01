@@ -7,7 +7,7 @@ export default function HeaderUser() {
           className="w-10 h-10 rounded-full"
           alt="user"
         />
-        <span>Habil M</span>
+        <span className="hidden xs:block">Habil M</span>
         <img src="/icons/chevron-down.svg" />
       </div>
     </>
