@@ -21,3 +21,8 @@
     font-style: normal;
   }
 }
+
+.mega-menu-trigger:focus + .mega-menu,
+.mega-menu:hover {
+  display: block;
+}

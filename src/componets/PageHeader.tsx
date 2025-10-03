@@ -1,7 +1,7 @@
 import HeaderUser from "./HeaderUser";
 import HeaderWishListAndCart from "./HeaderWishListAndCart";
-
 import { FireIcon, HomeIcon, PercentageIcon, PromoIcon } from "./icons";
+import PhoneIcon from "./icons/PhoneIcon";
 
 import MainSearch from "./MainSearch";
 import Button from "./ui/Button";
@@ -59,21 +59,35 @@ export default function PageHeader() {
           <MainSearch />
         </div>
       </div>
-
-      <div className="header-row-2 py-[10px]">
-        <div className="container mx-auto flex">
+      <hr className="border-t border-solid border-[#ADADAD2B]" />
+      <div className="header-row-2 py-[10px] relative">
+        <div className="container mx-auto flex items-center">
           {/* Button */}
-          <div>
+          <div className="md:w-1/4">
             <Button
+              className="mega-menu-trigger"
               variant="primary"
               startIcon={<img src="/icons/layout-grid.svg" />}
             >
               Browser All Categories
             </Button>
+            <div className="hidden absolute top-[100%] bg-amber-100 left-0 mega-menu w-full min-h-[200px]">
+              <div className="container mx-auto">
+                <h1 className="text-3xl"> Categories</h1>
+                <div className="grid grid-cols-3 gap-4">
+                  <div>1</div>
+                  <div>2</div>
+                  <div>3</div>
+                  <div>4</div>
+                  <div>5</div>
+                  <div>6</div>
+                </div>
+              </div>
+            </div>
           </div>
           {/** Menu */}
-          <div>
-            <ul className="flex">
+          <div className="md:w-2/4">
+            <ul className="flex justify-center ">
               {menuItems.map((item, index) => (
                 <li key={index}>
                   <a
@@ -88,9 +102,20 @@ export default function PageHeader() {
           </div>
 
           {/** Phone number */}
-          <div></div>
+          <div className="md:w-1/4">
+            <a
+              href="tel:+1233-7777"
+              className="flex flex-col xl:flex-row gap-[5px] items-center"
+            >
+              <span className="text-primary flex gap-[6px] items-center">
+                <PhoneIcon /> 1233-7777
+              </span>
+              <span>24/7 support center</span>
+            </a>
+          </div>
         </div>
       </div>
+      <hr className="border-t border-solid border-[#ADADAD2B]" />
     </header>
   );
 }
